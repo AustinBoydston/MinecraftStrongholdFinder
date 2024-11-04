@@ -3,6 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangulation Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Triangulation Calculator</h1>
+    <form id="triangulation-form">
+        <div class="input-group">
+            <label for="input1">Input x coordinate of the first eye of ender throw:</label>
+            <input type="text" id="input1" placeholder="Enter a floating point number" required>
+        </div>
+        <div class="input-group">
+            <label for="input2">Input z coordinate of the second eye of ender throw:</label>
+            <input type="text" id="input2" placeholder="Enter a number" required>
+        </div>
+        <div class="input-group">
+            <label for="input3">Input the yaw angle of the first eye of ender throw:</label>
+            <input type="text" id="input3" placeholder="Enter a number" required>
+        </div>
+        <div class="input-group">
+            <label for="input4">Input the x coordinate of the second eye of ender throw:</label>
+            <input type="text" id="input4" placeholder="Enter a number" required>
+        </div>
+        <div class="input-group">
+            <label for="input5">Input the z coordinate of the second eye of ender throw:</label>
+            <input type="text" id="input5" placeholder="Enter a number" required>
+        </div>
+        <div class="input-group">
+            <label for="input6">Input the yaw angle of the second eye of ender throw:</label>
+            <input type="text" id="input6" placeholder="Enter a number" required>
+        </div>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <script>
+        document.getElementById('triangulation-form').onsubmit = function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Validate that all inputs are floating point numbers
+            const inputs = [
+                document.getElementById('input1').value,
+                document.getElementById('input2').value,
+                document.getElementById('input3').value,
+                document.getElementById('input4').value,
+                document.getElementById('input5').value,
+                document.getElementById('input6').value,
+            ];
+
+            const valid = inputs.every(input => /^-?\d+(\.\d+)?$/.test(input));
+            if (!valid) {
+                alert('Please enter valid floating point numbers.');
+                return;
+            }
+
+            // Perform calculations here (not implemented in this example)
+            alert('Inputs are valid! Proceed with calculations.');
+        };
+    </script>
+
+</body>
     <title>Brython Example</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@latest/brython.min.js"></script>
 </head>

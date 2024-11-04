@@ -1,4 +1,4 @@
-# Stronghold Locator
+# Stronghold Locator App
 # Author: Austin Boydston
 # Description: This program takes in the coordinates and angle of
 # two different eye of ender throws and calculates the location of 

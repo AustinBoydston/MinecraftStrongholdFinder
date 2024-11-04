@@ -33,7 +33,7 @@ def slopeUnitTest():
     y1 = 7.239
     x2 = 5.489
     y2 = 9.237 
-    m = slope(x1, z1, x2, z2)
+    m = slope(x1, y1, x2, y2)
 
     if round(m, 7) == round(1.998/2.288, 7):
         print("Slope Unit Test 2 Passed")
@@ -73,8 +73,85 @@ def getSecondPointUnitTest():
     #test 2
     #x1 = 
     
+def findBUnitTest():
+    x = 2
+    y = 3
+    m = 1
+    b_1 = findB(m, x, y)
+    #projected b 
+    b = 1
+    if b_1 == b:
+        print("Find B unit test 1 passed")
+    else:
+        print("Find B unit test 1 failed")
+    
+    x = -2
+    y = 3
+    m = 2
+    b_2 = findB(m, x, y)
+    #projected b = 7
+    b = 7
+    if b_2 == b:
+        print("Find B unit test 2 passed")
+    else:
+        print("Find B unit test 2 failed")
+
+#Unit test find stronghold x unit test
+def findStrongholdXUnitTest():
+    m1 = 2
+    b1 = 1
+    m2 = 3
+    b2 = -2
+    x_1 = findStrongholdX(m1, m2, b1, b2)
+
+    #Expected x value = 3
+    x = 3
+    if x_1 == x:
+        print("Find Stronghold X unit test 1 passed")
+    else:
+        print("Find Stronghold X unit test 1 failed")
+
+    m1 = -40
+    m2 = 10
+    b1 = -3
+    b2 = -7
+    x_2 = findStrongholdX(m1, m2, b1, b2)
+    #Expected x value = 4/50
+    x = 4/50
+    if x_2 == x:
+        print("Find Stronghold X Unit Test 2 Passed")
+    else:
+        print("Find Stronghold X Unit Test 2 Failed")
+    return 0
+
+
+def findStrongHoldYUnitTest():
+    b = 4
+    m = 2
+    x = 2
+    y_1 = findStrongholdY(x, m, b)
+    #Expected y value = 8
+    y = 8
+
+    if y_1 == y:
+        print("Find Stronghold Y Unit Test 1 Passed")
+    else:
+        print("Find Stronghold Y Unit Test 1 Failed")
+    
+    b = 15
+    m = -.5
+    x = 30
+    y_2 = findStrongholdY(x, m, b)
+    #Expected y value = 0
+    y = 0
+    if y_2 == y:
+        print("Find Stronghold Y Unit Test 2 Passed")
+    else:
+        print("Find Stronghold Y Unit Test 2 Failed")
 
     
+
+
 #Get a number from the user. The prompt gives the user the numbers meaning
 def getInputNumber(prompt):
     while True:
@@ -156,23 +233,23 @@ def triangulate(x1, y1, theta1, x2, y2, theta2):
     return Yf, Xf
 
 #Get the input values from the user
-x1 = getInputNumber(prompt1)
-z1 = getInputNumber(prompt2)
-theta1 = getInputNumber(prompt3)
-x2 = getInputNumber(prompt4)
-z2 = getInputNumber(prompt5)
-theta2 = getInputNumber(prompt6)
+#x1 = getInputNumber(prompt1)
+#z1 = getInputNumber(prompt2)
+#theta1 = getInputNumber(prompt3)
+#x2 = getInputNumber(prompt4)
+#z2 = getInputNumber(prompt5)
+#theta2 = getInputNumber(prompt6)
 
 
 
 
 #Convert the minecraft angles to the standard angles in math
-theta1 = convertToStandardAngle(theta1)
-theta2 = convertToStandardAngle(theta2)
+#theta1 = convertToStandardAngle(theta1)
+#theta2 = convertToStandardAngle(theta2)
 
 #Convert the minecraft coordinates to standard coordinates.
-x_s1, y_s1 = convertCoordsToStandard(x1, z1)
-x_s2, y_s2 = convertCoordsToStandard(x2, z2)
+#x_s1, y_s1 = convertCoordsToStandard(x1, z1)
+#x_s2, y_s2 = convertCoordsToStandard(x2, z2)
 
 
 #Note, investigate your B
@@ -186,11 +263,9 @@ x_s2, y_s2 = convertCoordsToStandard(x2, z2)
 #theta1 = 53.130102354156 
 #theta2 = 111.8014094863518
 #print(x1, "   ", x2)
-X_sf, Z_sf = triangulate(x_s1, y_s1, theta1, x_s2, y_s2, theta2)
-#X_sf, Y_sf = triangulate(x_s1, y_s1, theta1, x_s2, y_s2, theta2)
-#X_mcf, Z_mcf = convertCoordsToMC(X_sf, Y_sf)
+#X_sf, Z_sf = triangulate(x_s1, y_s1, theta1, x_s2, y_s2, theta2)
 
-print("your stronghold is located at (", round(X_sf, 0), ", ", round(Z_sf, 0), ")")
+#print("your stronghold is located at (", round(X_sf, 0), ", ", round(Z_sf, 0), ")")
 #getSecondPointUnitTest()
 
 
@@ -201,3 +276,13 @@ print("your stronghold is located at (", round(X_sf, 0), ", ", round(Z_sf, 0), "
 
 #Unit Test Slope
 #slopeUnitTest()
+
+
+#Unit test findB
+#findBUnitTest()
+
+#Unit Test Find Stronghold X
+#findStrongholdXUnitTest()
+
+#Unit Test Find Stronghold Y
+#findStrongHoldYUnitTest()

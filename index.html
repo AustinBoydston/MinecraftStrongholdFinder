@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brython Example</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@latest/brython.min.js"></script>
+</head>
+<body onload="brython()">
+
+    <h1>Hello from Brython!</h1>
+    <button id="my-button">Click Me!</button>
+    <p id="output"></p>
+
+    <script type="text/python">
+        from browser import document
+
+        def on_click(event):
+            document["output"].text = "Hello, Brython!"
+
+        document["my-button"].bind("click", on_click)
+    </script>
+
+</body>
+</html>

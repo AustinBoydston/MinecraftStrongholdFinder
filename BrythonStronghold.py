@@ -4,7 +4,7 @@
 # two different eye of ender throws and calculates the location of 
 # the stronghold.
 from browser import document
-import math as m
+import math
 
 
 ################ Unit Tests ################
@@ -247,13 +247,13 @@ def distance(x1, y1, x2, y2):
 
 #convert the angle measure from degrees to radians
 def degreeToRad(theta):
-    return theta * (m.pi / 180)
+    return theta * (math.pi / 180)
 
 
 #Get a point along the give line/vector
 def getSecondPoint(x1, y1, theta):
-    x3 =  m.cos(degreeToRad(theta)) + x1    
-    y3 =  m.sin(degreeToRad(theta)) + y1
+    x3 =  math.cos(degreeToRad(theta)) + x1    
+    y3 =  math.sin(degreeToRad(theta)) + y1
     return x3, y3
 
 

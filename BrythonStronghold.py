@@ -342,7 +342,7 @@ def on_click(event):
     x_s2, y_s2 = convertCoordsToStandard(x2, z2)
 
     X_sf, Z_sf = triangulate(x_s1, y_s1, theta1, x_s2, y_s2, theta2)
-    alert("Strongholg Located At: (", X_sF ", " Z_sf")")
+    alert("Strongholg Located At: (", X_sF, ", ", Z_sf,")")
 
 document["calculate"].bind("click", on_click)
 

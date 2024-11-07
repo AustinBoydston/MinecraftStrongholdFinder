@@ -7,9 +7,6 @@ from browser import document
 import math as m
 
 
-
-
-
 ################ Unit Tests ################
 #Test the slope function
 def slopeUnitTest():
@@ -325,36 +322,29 @@ def triangulate(x1, y1, theta1, x2, y2, theta2):
 ########################## End Function Definitions ########################
 
 
-#Get the input values from the user
-x1 = document["input1"].value
-z1 = document["input2"].value
-theta1 = document["input3"].value
-x2 = document["input4"].value
-z2 = document["input5"].value
-theta2 = document["input6"].value
 
+#Brython click event function
+def on_click(event):
+    #Get the input values from the user
+    x1 = document["input1"].value
+    z1 = document["input2"].value
+    theta1 = document["input3"].value
+    x2 = document["input4"].value
+    z2 = document["input5"].value
+    theta2 = document["input6"].value
 
+    #Convert the minecraft angles to the standard angles in math
+    theta1 = convertToStandardAngle(theta1)
+    theta2 = convertToStandardAngle(theta2)
 
+    #Convert the minecraft coordinates to standard coordinates.
+    x_s1, y_s1 = convertCoordsToStandard(x1, z1)
+    x_s2, y_s2 = convertCoordsToStandard(x2, z2)
 
-#Convert the minecraft angles to the standard angles in math
-theta1 = convertToStandardAngle(theta1)
-theta2 = convertToStandardAngle(theta2)
+    X_sf, Z_sf = triangulate(x_s1, y_s1, theta1, x_s2, y_s2, theta2)
+    alert("Strongholg Located At: (", X_sF ", " Z_sf")")
 
-#Convert the minecraft coordinates to standard coordinates.
-x_s1, y_s1 = convertCoordsToStandard(x1, z1)
-x_s2, y_s2 = convertCoordsToStandard(x2, z2)
-
-
-
-
-
-
-X_sf, Z_sf = triangulate(x_s1, y_s1, theta1, x_s2, y_s2, theta2)
-
-print("your stronghold is located at (", round(X_sf, 0), ", ", round(Z_sf, 0), ")")
-
-
-
+document["calculate"].bind("click", on_click)
 
 #################Call Unit Tests##############################
 

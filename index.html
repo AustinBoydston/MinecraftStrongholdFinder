@@ -93,15 +93,14 @@
             //alert('Inputs are valid! Proceed with calculations.');
         };
     </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script>
-    
+    <script type="text/python" src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
         # Stronghold Locator App
         # Author: Austin Boydston
         # Description: This program takes in the coordinates and angle of
         # two different eye of ender throws and calculates the location of 
         # the stronghold.
         from browser import document
-        import math
+        import math as m
 
         #Calculate the distance between two points
         def distance(x1, y1, x2, y2):
@@ -110,13 +109,13 @@
 
         #convert the angle measure from degrees to radians
         def degreeToRad(theta):
-            return theta * (math.pi / 180)
+            return theta * (m.pi / 180)
 
 
         #Get a point along the give line/vector
         def getSecondPoint(x1, y1, theta):
-            x3 =  math.cos(degreeToRad(theta)) + x1    
-            y3 =  math.sin(degreeToRad(theta)) + y1
+            x3 =  m.cos(degreeToRad(theta)) + x1    
+            y3 =  m.sin(degreeToRad(theta)) + y1
             return x3, y3
 
 

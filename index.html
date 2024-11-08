@@ -93,13 +93,15 @@
             //alert('Inputs are valid! Proceed with calculations.');
         };
     </script>
-    <script type="text/python" src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
+        from browser import document, alert
+        
         # Stronghold Locator App
         # Author: Austin Boydston
         # Description: This program takes in the coordinates and angle of
         # two different eye of ender throws and calculates the location of 
         # the stronghold.
-        from browser import document
+        
         import math
 
         #Calculate the distance between two points
@@ -213,15 +215,5 @@
 
 
 </body>
-    <title>Brython Example</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@latest/brython.min.js"></script>
-</head>
-<body onload="brython()">
-
-    <h1>Hello from Brython!</h1>
-    <button id="my-button">Click Me!</button>
-    <p id="output"></p>
-
-    
-</body>
+   
 </html>

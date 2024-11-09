@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <title>Triangulation Calculator</title>
     <style>
         body {
@@ -36,8 +37,15 @@
             background-color: #45a049;
         }
     </style>
+
+ <!-- Load Brython core -->
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@latest/brython.min.js"></script>
+ <!-- Load Brython standard library -->
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@latest/brython_stdlib.js"></script>
+
 </head>
-<body>
+
+<body onload="brython()">
 
     <h1>Stronghold Location Calculator</h1>
     <p>Enter the x and z coordinates, and the yaw angle of any two eye of ender throws. This calculator will then give you the location of the stronghold. Due to how minecraft rounds the angle, having the two throws atleast 200 blocks apart will make it more accurate. Also, since strongholds generate only within approximately 25,000 blocks from 0,0 being within that region is recommended for best results.</p>
@@ -93,8 +101,8 @@
             //alert('Inputs are valid! Proceed with calculations.');
         };
     </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
-        from browser import document, alert
+    <script type="text/python" id="script1">
+        from browser import document, console, alert
         
         # Stronghold Locator App
         # Author: Austin Boydston
@@ -191,12 +199,12 @@
         def on_click(event):
             print("clicked")
             #Get the input values from the user
-            x1 = document["input1"].value
-            z1 = document["input2"].value
-            theta1 = document["input3"].value
-            x2 = document["input4"].value
-            z2 = document["input5"].value
-            theta2 = document["input6"].value
+            x1 = float(document["input1"].value)
+            z1 = float(document["input2"].value)
+            theta1 = float(document["input3"].value)
+            x2 = float(document["input4"].value)
+            z2 = float(document["input5"].value)
+            theta2 = float(document["input6"].value)
 
             #Convert the minecraft angles to the standard angles in math
             theta1 = convertToStandardAngle(theta1)
@@ -207,7 +215,7 @@
             x_s2, y_s2 = convertCoordsToStandard(x2, z2)
 
             X_sf, Z_sf = triangulate(x_s1, y_s1, theta1, x_s2, y_s2, theta2)
-            alert("Strongholg Located At: (", X_sF, ", ", Z_sf,")")
+            alert(f"Strongholg Located At: ({X_sf}, {Z_sf})")
 
         document["calculate"].bind("click", on_click)
 

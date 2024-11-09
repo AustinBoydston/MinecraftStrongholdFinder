@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 0px solid #000000;
+    border-radius: 5px;
+    background-image: url('strongholdimg.png'); /* Replace with your image URL */
+    background-repeat: repeat; /* This makes the texture tile */
+    background-size: 1920px 991px; /* Adjust the size of each tile */
+    background-position: top center; /* Position the background at the top-left */
+    color: #eeeeee; /* Set text color for contrast */
+}
+h1 {
+    text-align: center;
+}
+.input-group {
+    margin-bottom: 15px;
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+input[type="text"],  textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    color: #ffffff;
+    background-color: #616161;
+}
+button {
+    padding: 10px 15px;
+    background-color: #38703a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}

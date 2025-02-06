@@ -4,8 +4,8 @@ body {
     padding: 20px;
     border: 0px solid #000000;
     border-radius: 5px;
-    background-image: url('strongholdimg.png'); /* Replace with your image URL */
-    background-repeat: repeat; /* This makes the texture tile */
+    background-image: url('strongholdimg.png'); 
+    background-repeat: repeat; 
     background-size: 1920px 991px; /* Adjust the size of each tile */
     background-position: top center; /* Position the background at the top-left */
     color: #eeeeee; /* Set text color for contrast */
